@@ -20,6 +20,8 @@ import AllComplaints from './pages/support/AllComplaints.jsx';
 import FQA from './pages/fqa/FQA.jsx';
 import AddFQA from './pages/fqa/AddFQA.jsx';
 import Profile from './pages/user/Profile.jsx';
+import AllCategory from './pages/categories/AllCategory.jsx';
+import AddCategories from './pages/categories/AddCategories.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +34,8 @@ const router = createBrowserRouter(
       <Route path='blogs/AddBlogs' element={<AddBlogs />} />
       <Route path='blogsService/AllServices' element={<AllServices />} />
       <Route path='blogsService/AddServices' element={<AddServices />} />
+      <Route path='categories/AllCategory' element={<AllCategory />} />
+      <Route path='categories/AddCategories' element={<AddCategories />} />
       <Route path='support/AllComplaints' element={<AllComplaints />} />
       <Route path='fqa/FQA' element={<FQA />} />
       <Route path='fqa/AddFQA' element={<AddFQA />} />

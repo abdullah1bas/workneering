@@ -2,7 +2,7 @@
 const AddFQA = () => {
     return (
         <div>
-            AddFQA Page
+            Add FQA Page
         </div>
     );
 }

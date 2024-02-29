@@ -62,10 +62,9 @@ const ChatBubble = () => {
   return (
     <>
       <Tooltip title="Message">
-        <IconButton color="inherit">
+        <IconButton color="inherit" onClick={handleClick}>
           <Badge
             color="error"
-            onClick={handleClick}
             badgeContent={8}
             anchorOrigin={{
               vertical: "top",
@@ -126,7 +125,6 @@ const ChatBubble = () => {
 
         <Divider />
         <MenuClick {...{ handleClose, data }} message={true} />
-        
       </Menu>
     </>
   );

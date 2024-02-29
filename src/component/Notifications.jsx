@@ -25,10 +25,9 @@ const Notifications = () => {
   return (
     <>
       <Tooltip title="notifications">
-        <IconButton color="inherit">
+        <IconButton color="inherit" onClick={handleClick}>
           <Badge
             color="error"
-            onClick={handleClick}
             badgeContent={7}
             anchorOrigin={{
               vertical: "top",

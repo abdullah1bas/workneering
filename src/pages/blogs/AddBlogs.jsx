@@ -2,7 +2,7 @@
 const AddBlogs = () => {
     return (
         <div>
-            AddBlogs Page
+            Add Blogs Page
         </div>
     );
 }

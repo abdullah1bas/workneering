@@ -2,7 +2,7 @@
 const AllComplaints = () => {
     return (
         <div>
-            AllComplaints Page
+            All Complaints Page
         </div>
     );
 }

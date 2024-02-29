@@ -15,6 +15,7 @@ import {
   AirplaneTicket,
   ArrowForward,
   AutoFixHigh,
+  Category,
   EmojiFlags,
   Home,
   LocalActivity,
@@ -45,7 +46,7 @@ const links = [
     ],
   },
   {
-    text: "Blogs",
+    text: "Services",
     icon: <AirplaneTicket />,
     panel: "panel3",
     linkTeam: [
@@ -54,15 +55,24 @@ const links = [
     ],
   },
   {
+    text: "Categories",
+    icon: <Category />,
+    panel: "panel4",
+    linkTeam: [
+      { text: "All Category", path: "/blogsService/AllServices" },
+      { text: "Add Categories", path: "/blogsService/AddServices" },
+    ],
+  },
+  {
     text: "Ticket Support",
     icon: <EmojiFlags />,
-    panel: "panel4",
+    panel: "panel5",
     linkTeam: [{ text: "All Complaints", path: "/support/AllComplaints" }],
   },
   {
     text: "FQA",
     icon: <AutoFixHigh />,
-    panel: "panel5",
+    panel: "panel6",
     linkTeam: [
       { text: "FQA", path: "/fqa/FQA" },
       { text: "Add FQA", path: "/fqa/AddFQA" },
@@ -119,7 +129,7 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
           <Tooltip title={link.text} key={index} placement="right-start">
             <Button onClick={handleDrawerOpen} sx={{ m: 0, p: 0 }}>
               <Accordion
-                expanded={(expanded === link.panel) & open}
+                expanded={(expanded === link.panel) && open}
                 onChange={handleChange(link.panel)}
                 sx={{ width: "100%" }}
               >
@@ -144,6 +154,7 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
                       ml: 1,
                       fontSize: 16,
                       display: open ? "block" : "none",
+                      textTransform: 'capitalize'
                     }}
                   >
                     {link.text}
@@ -186,6 +197,7 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
                           "& .css-10hburv-MuiTypography-root": {
                             fontSize: "10px !important",
                           },
+                          textTransform: 'capitalize'
                         }}
                       />
                     </ListItemButton>

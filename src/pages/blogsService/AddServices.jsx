@@ -2,7 +2,7 @@
 const AddServices = () => {
     return (
         <div>
-            AddServices Page
+            Add Services Page
         </div>
     );
 }
