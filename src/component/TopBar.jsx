@@ -1,5 +1,4 @@
 import {
-  Badge,
   Divider,
   IconButton,
   Stack,
@@ -63,11 +62,10 @@ const TopBar = ({ open, handleDrawerOpen }) => {
         <Stack direction="row" flexGrow={1} justifyContent="end" spacing={1}>
           <ModeIcon />
 
-          <ChatBubble />
-
           <Notifications />
 
-          
+          <ChatBubble />
+
           <Divider
             orientation="vertical"
             flexItem

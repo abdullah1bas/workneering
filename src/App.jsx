@@ -5,7 +5,6 @@ import { ColorModeContext, useMode } from "./style/Theme";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import TopBar from "./component/TopBar";
-// import styled from "styled-components";
 import SideBar from "./component/SideBar";
 
 export const DrawerHeader = styled("div")(({ theme }) => ({

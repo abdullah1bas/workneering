@@ -22,7 +22,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import { DrawerHeader } from "../App";
-import logo from "../../public/images/White-logo.jpg";
+import logo from "../../public/images/White-logo.png";
 
 
 const links = [
@@ -98,11 +98,11 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
             },
             padding: 0,
             height: '64px',
-            width: '90px',
+            width: '180px',
           }}
           onClick={() => navigate('/')}
         >
-          <img src={logo} alt="" style={{ width: "100%", height: "100%" }} />
+          <img src={logo} alt="" style={{ width: "100%" }} />
         </Button>
         <IconButton onClick={handleDrawerClose} sx={{ color: "white" }}>
           {theme.direction === "rtl" ? (

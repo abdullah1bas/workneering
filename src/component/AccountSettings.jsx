@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  IconButton,
   Tooltip,
   Avatar,
   Menu,
@@ -12,7 +11,6 @@ import {
   Box,
 } from "@mui/material";
 import {
-  PersonOutlined,
   PersonAdd,
   Settings,
   Logout,
@@ -45,16 +43,6 @@ const AccountSettings = () => {
             <Typography sx={{fontSize: '8px', textTransform: 'capitalize'}}>Admin</Typography>
           </Box>
         </Button>
-
-        {/* <IconButton
-          onClick={handleClick}
-          aria-controls={openMenu ? "account-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={openMenu ? "true" : undefined}
-          color="inherit"
-        >
-          <PersonOutlined />
-        </IconButton> */}
       </Tooltip>
 
       <Menu
