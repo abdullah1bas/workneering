@@ -35,16 +35,32 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App" style={{backgroundColor: '#171717 !important'}}>
-          <Box sx={{ display: "flex" }}>
+        <div className="App" style={{ backgroundColor: "#171717 !important"}}>
+          <Box sx={{ display: "flex", minHeight: '94vh'  }}>
             <TopBar {...{ open, handleDrawerOpen }} />
 
             <SideBar {...{ open, handleDrawerClose, handleDrawerOpen }} />
 
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, pb: 0 }}>
               <DrawerHeader />
               <Outlet />
             </Box>
+          </Box>
+          <Box
+            sx={{
+              width: open ? "calc(100% + 240px)" : "100%",
+              textAlign: "center",
+              mt: 1,
+              backgroundColor:
+                theme.palette.mode == "light" ? "#121212" : "white",
+              color: theme.palette.mode == "light" ? "white" : "black",
+              py: 1,
+              [theme.breakpoints.down("md")]: {
+                fontSize: "10px",
+              },
+            }}
+          >
+            Copyright © 2024.All right reserved
           </Box>
         </div>
       </ThemeProvider>

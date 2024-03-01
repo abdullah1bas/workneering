@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 // import Paper from "@mui/material/Paper";
 // import Draggable from "react-draggable";
-import { Button } from "@mui/material";
+import { Button, useTheme } from "@mui/material";
 
 const DiscipDialog = ({ description }) => {
   const [open, setOpen] = useState(false);
@@ -19,11 +19,12 @@ const DiscipDialog = ({ description }) => {
   const handleClose = () => {
     setOpen(false);
   };
+  const theme = useTheme();
   return (
     <>
       <Button
         onClick={handleClickOpen}
-        sx={{ textTransform: "capitalize", color: "black" }}
+        sx={{ textTransform: "capitalize", color: theme.palette.mode == 'dark' ? 'white' : 'black' }}
       >
         description
       </Button>

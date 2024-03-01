@@ -43,7 +43,7 @@ const TopBar = ({ open, handleDrawerOpen }) => {
       // @ts-ignore
       open={open}
     >
-      <Toolbar>
+      <Toolbar sx={{minHeight: '64px'}}>
         <Tooltip title="menu">
           <IconButton
             color="inherit"
