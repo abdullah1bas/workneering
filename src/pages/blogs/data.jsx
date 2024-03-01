@@ -11,28 +11,28 @@ export const rows = [
       description: "In the ever-evolving world of business, effective management plays a crucial role.",
       MainPhoto: photo1,
       DetailsPhoto: photo1,
-      actions: "(665)121-5454",
+      actions: "",
     },
     {
       id: 2,
       description: "A complete guide to starting a small business online",
       MainPhoto: photo2,
       DetailsPhoto: photo2,
-      actions: "(421)314-2288",
+      actions: "",
     },
     {
       id: 3,
       description: "Welcome to the Future of Airports: Sustainable, Secure, and Enhanced Passenger Experience",
       MainPhoto: photo3,
       DetailsPhoto: photo3,
-      actions: "(422)982-6739",
+      actions: "",
     },
     {
       id: 4,
       description: "Welcome to Workneering, the leading provider of comprehensive and reliable manpower supply services in the Gulf.",
       MainPhoto: photo4,
       DetailsPhoto: photo4,
-      actions: "(921)425-6742",
+      actions: "",
     },
   ];
   
