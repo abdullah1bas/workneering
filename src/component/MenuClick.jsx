@@ -1,16 +1,6 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
-import {
-  Avatar,
-  Badge,
-  Box,
-  Divider,
-  MenuItem,
-  Stack,
-  Typography,
-  styled,
-  useTheme,
-} from "@mui/material";
+import { Avatar, Badge, Box, Divider, MenuItem, Stack, Typography, styled, useTheme, } from "@mui/material";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -42,6 +32,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const MenuClick = ({ handleClose, data, message }) => {
+  console.log('MenuClick Page')
   //   const navigate = useNavigate();
   const theme = useTheme();
   return (

@@ -1,5 +1,6 @@
 
 const AllCategory = () => {
+    console.log('AllCategory Page')
     return (
         <div>
             All Category Page

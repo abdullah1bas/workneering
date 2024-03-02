@@ -1,21 +1,6 @@
 // @ts-nocheck
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Tooltip, Typography, useTheme } from "@mui/material";
-import {
-  AirplaneTicket,
-  ArrowForward,
-  AutoFixHigh,
-  Category,
-  EmojiFlags,
-  Home,
-  LocalActivity,
-} from "@mui/icons-material";
+import { Accordion, AccordionSummary, Button, Divider ,IconButton ,ListItemButton ,ListItemIcon ,ListItemText , Tooltip, Typography, useTheme} from "@mui/material";
+import { AirplaneTicket, ArrowForward, AutoFixHigh, Category, ChevronLeft, ChevronRight, EmojiFlags, ExpandMore, Home, LocalActivity, } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import { DrawerHeader } from "../App";
@@ -75,11 +60,7 @@ const links = [
   },
 ];
 
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Drawer from "./Drawer";
 
 // eslint-disable-next-line react/prop-types
@@ -89,9 +70,9 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
 
   const [expanded, setExpanded] = useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
+  const handleChange = useCallback((panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
-  };
+  },[open]);
 
   return (
     <Drawer variant="permanent" open={open}>
@@ -111,9 +92,9 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
         </Button>
         <IconButton onClick={handleDrawerClose} sx={{ color: "white" }}>
           {theme.direction === "rtl" ? (
-            <ChevronRightIcon />
+            <ChevronRight />
           ) : (
-            <ChevronLeftIcon />
+            <ChevronLeft />
           )}
         </IconButton>
       </DrawerHeader>
@@ -129,7 +110,7 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
                 sx={{ width: "100%" }}
               >
                 <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
+                  expandIcon={<ExpandMore />}
                   aria-controls="panel1-content"
                   id="panel1-header"
                   sx={{
@@ -181,6 +162,7 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
                           "& .css-i4bv87-MuiSvgIcon-root": {
                             fontSize: "18px",
                           },
+                          fontSize: "18px",
                         }}
                       >
                         <ArrowForward />
@@ -191,8 +173,9 @@ const SideBar = ({ open, handleDrawerClose, handleDrawerOpen }) => {
                         sx={{
                           opacity: open ? 1 : 0,
                           "& .css-10hburv-MuiTypography-root": {
-                            fontSize: "10px !important",
+                            fontSize: "10px",
                           },
+                          fontSize: "10px",
                           textTransform: "capitalize",
                         }}
                       />

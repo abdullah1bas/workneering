@@ -27,6 +27,7 @@ const currencies = [
 ];
 
 const AddBlogs = () => {
+  console.log('AddBlogs Page')
   const navigate = useNavigate();
   return (
     <Stack sx={{ height: "100%" }}>

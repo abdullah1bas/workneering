@@ -1,5 +1,6 @@
 
 const AllServices = () => {
+    console.log('AllServices Page')
     return (
         <div>
             All Services Page

@@ -1,15 +1,5 @@
-import { useState } from "react";
-import {
-  Tooltip,
-  Avatar,
-  Menu,
-  MenuItem,
-  ListItemIcon,
-  Divider,
-  Button,
-  Typography,
-  Box,
-} from "@mui/material";
+import React, { useCallback, useMemo, useState } from "react";
+import { Tooltip, Avatar, Menu, MenuItem, ListItemIcon, Divider, Button, Typography, Box, } from "@mui/material";
 import {
   PersonAdd,
   Settings,
@@ -18,14 +8,15 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const AccountSettings = () => {
+  console.log('AccountSettings Page')
   const [anchorEl, setAnchorEl] = useState(null);
-  const openMenu = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const openMenu = useMemo(() => Boolean(anchorEl),[anchorEl]);
+  const handleClick = useCallback((event) => {
     setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+  },[anchorEl]);
+  const handleClose = useCallback(() => {
     setAnchorEl(null);
-  };
+  },[anchorEl]);
   const navigate = useNavigate();
   return (
     <>
@@ -113,4 +104,4 @@ const AccountSettings = () => {
   );
 };
 
-export default AccountSettings;
+export default React.memo(AccountSettings);

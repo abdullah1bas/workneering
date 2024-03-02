@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ColorModeContext } from "../style/Theme";
 import { IconButton, Tooltip, useTheme } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 
 const ModeIcon = () => {
+  console.log('ModeIcon Page')
   const colorMode = useContext(ColorModeContext);
   const theme = useTheme();
   return (
@@ -43,4 +44,4 @@ const ModeIcon = () => {
   );
 };
 
-export default ModeIcon;
+export default React.memo(ModeIcon);

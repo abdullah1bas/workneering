@@ -1,6 +1,6 @@
 import { Bungalow, Group, InsertDriveFile, NotificationsOutlined, Send, ShoppingCart, SpeakerNotes } from "@mui/icons-material";
 import { Badge, Divider, IconButton, Menu, Stack, Tooltip, Typography } from "@mui/material";
-import { useState } from "react";
+import React, { useCallback, useState } from "react";
 import MenuClick from "./MenuClick";
 
 const data = [
@@ -13,14 +13,15 @@ const data = [
 ];
 
 const Notifications = () => {
+  console.log('Notifications Page')
   const [anchorEl, setAnchorEl] = useState(null);
   const openMenu = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const handleClick = useCallback((event) => {
     setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+  },[anchorEl]);
+  const handleClose = useCallback(() => {
     setAnchorEl(null);
-  };
+  },[anchorEl]);
 
   return (
     <>
@@ -87,4 +88,4 @@ const Notifications = () => {
   );
 };
 
-export default Notifications;
+export default React.memo(Notifications);

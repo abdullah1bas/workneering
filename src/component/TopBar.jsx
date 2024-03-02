@@ -37,6 +37,7 @@ const AppBarr = styled(MuiAppBar, {
 
 // eslint-disable-next-line react/prop-types
 const TopBar = ({ open, handleDrawerOpen }) => {
+  console.log('TopBar Page')
   return (
     <AppBarr
       position="fixed"

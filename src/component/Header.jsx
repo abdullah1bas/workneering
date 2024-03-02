@@ -2,7 +2,8 @@
 import { Box, Typography, useTheme } from "@mui/material";
 
 const Header = ({title , subTitle}) => {
-    const theme = useTheme();
+  console.log('Header Page')
+  const theme = useTheme();
   return (
     <Box mb={ 4}>
       <Typography

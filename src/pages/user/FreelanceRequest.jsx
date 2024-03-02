@@ -77,6 +77,7 @@ const rows = [
   },
 ];
 const FreelanceRequest = () => {
+  console.log('FreelanceRequest Page')
   return (
     <>
       <Header title={"Payment Details"} subTitle={"Show Details"} />

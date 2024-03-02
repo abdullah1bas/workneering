@@ -1,15 +1,7 @@
 import { ChatBubbleOutline } from "@mui/icons-material";
-import {
-  Badge,
-  Divider,
-  IconButton,
-  Menu,
-  Stack,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Badge, Divider, IconButton, Menu, Stack, Tooltip, Typography, } from "@mui/material";
 import MenuClick from "./MenuClick";
-import { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 const data = [
   {
@@ -51,14 +43,15 @@ const data = [
 ];
 
 const ChatBubble = () => {
+  console.log('ChatBubble Page')
   const [anchorEl, setAnchorEl] = useState(null);
-  const openMenu = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const openMenu = useMemo(() => Boolean(anchorEl),[anchorEl]);
+  const handleClick = useCallback((event) => {
     setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+  },[anchorEl]);
+  const handleClose = useCallback(() => {
     setAnchorEl(null);
-  };
+  },[anchorEl]);
   return (
     <>
       <Tooltip title="Message">
@@ -130,4 +123,4 @@ const ChatBubble = () => {
   );
 };
 
-export default ChatBubble;
+export default React.memo(ChatBubble);

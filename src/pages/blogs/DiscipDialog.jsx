@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -10,15 +10,16 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { Button, useTheme } from "@mui/material";
 
 const DiscipDialog = ({ description }) => {
+  console.log('DiscipDialog Page')
   const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = useCallback(() => {
     setOpen(true);
-  };
+  },[open]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setOpen(false);
-  };
+  },[open]);
   const theme = useTheme();
   return (
     <>

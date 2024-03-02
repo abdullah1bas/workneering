@@ -3,7 +3,7 @@ import { Box, CssBaseline, ThemeProvider, styled } from "@mui/material";
 import "./App.css";
 import { ColorModeContext, useMode } from "./style/Theme";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import React, { useCallback, useState } from "react";
 import TopBar from "./component/TopBar";
 import SideBar from "./component/SideBar";
 
@@ -17,19 +17,20 @@ export const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 function App() {
+  console.log('App Page')
   const [theme, colorMode] = useMode();
 
   const [open, setOpen] = useState(false);
   document.addEventListener("keyup", (e) => {
     e.key === "Escape" && setOpen(false);
   });
-  const handleDrawerOpen = () => {
+  const handleDrawerOpen = useCallback(() => {
     setOpen(true);
-  };
+  },[open]);
 
-  const handleDrawerClose = () => {
+  const handleDrawerClose = useCallback(() => {
     setOpen(false);
-  };
+  },[open]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -68,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

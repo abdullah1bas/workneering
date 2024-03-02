@@ -1,29 +1,13 @@
 /* eslint-disable no-unused-vars */
-import {
-  Badge,
-  Box,
-  Button,
-  ButtonGroup,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Stack, } from "@mui/material";
 import Header from "../../component/Header";
-import {
-  AdminPanelSettingsOutlined,
-  Create,
-  Delete,
-  LockOpenOutlined,
-  Publish,
-  RemoveRedEye,
-  SecurityOutlined,
-} from "@mui/icons-material";
+import { Create, Delete, RemoveRedEye, } from "@mui/icons-material";
 import { DataGrid } from "@mui/x-data-grid";
 import { rows } from "./data";
 import DiscipDialog from "./DiscipDialog";
 
 const AllBlogs = () => {
-  const theme = useTheme();
+  console.log('AllBlogs Page')
   // columns[1].field.value === rows[1].key
   const columns = [
     {
